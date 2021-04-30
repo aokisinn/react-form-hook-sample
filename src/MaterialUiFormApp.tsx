@@ -18,6 +18,7 @@ export default function App() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
+            {/* UIライブラリを使う際は、コントローラーを通して操作する */}
             <Controller
                 name="firstName"
                 control={control}
