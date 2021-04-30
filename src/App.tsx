@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useForm } from "react-hook-form";
 
-function App() {
+type Inputs = {
+  example: string,
+  exampleRequired: string,
+  gender: string
+};
+
+export default function App() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm<Inputs>();
+
+  const onSubmit = (data: Inputs) => {
+    console.log(data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("example")} />
+      <br />
+      <input {...register("exampleRequired", { required: true })} />
+      {errors.exampleRequired && <span>必須項目です。</span>}
+      <br />
+      <select {...register("gender")}>
+        <option value="female">女性</option>
+        <option value="male">男</option>
+        <option value="other">その他</option>
+      </select>
+      <br />
+      <input type="submit" />
+    </form>
   );
 }
-
-export default App;
