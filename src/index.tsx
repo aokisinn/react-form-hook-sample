@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import MaterialUiFormApp from './MaterialUiFormApp';
+import YupApp from './YupApp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -10,6 +11,8 @@ ReactDOM.render(
     <App />
     <hr />
     <MaterialUiFormApp />
+    <hr />
+    <YupApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
