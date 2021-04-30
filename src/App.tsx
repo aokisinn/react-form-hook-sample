@@ -7,7 +7,7 @@ type Inputs = {
   gender: string
 };
 
-export default function App() {
+export default function MaterialUiFormApp() {
   const {
     register,
     handleSubmit,

@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import MaterialUiFormApp from './MaterialUiFormApp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <hr />
+    <MaterialUiFormApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
